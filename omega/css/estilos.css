@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron&display=swap');
+
+/* Regra utilitaria para ajustes no Box Model (usar sempre! em qualquer projeto web) */
+*, *::after,*::before {box-sizing: border-box;}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(../imagens/textura-fundo.png);
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Regras de css reset */
+/* * {margin: 0; padding: 0;} */
+ body, h1,h2,h3, p {
+     margin: 0;
+     padding: 0;
+    }
+
+ a {
+     text-decoration: none;
+     color: black;
+    }
+
+ header, footer {
+     background-color: rgba(128, 128, 128, 0.479);
+     text-align: center;    
+     }
+
+ header {
+     border-bottom: solid 2px;
+     margin-bottom: 8px;
+    }
+
+ footer {border-top: solid 2px;}
+
+main {
+    width: 95%;
+    margin: auto; 
+    }
+
+article{
+    background-color: white;
+    box-shadow: grey 1px 2px 5px;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+
+h1, nav, h2, h3, button {
+    font-family: Orbitron, Verdana, sans-serif;
+}
+
+h2, h3, p {padding: 1% 0;}
+
+/* p {
+    line-height: 1,5;
+} */
+
+footer img {width: 50px;}
+
+footer h2 {font-size: 1.2rem;}
+
+footer p {font-size: 0.75rem;}
+
+section, figure {margin: 40px 0;}
+
+figcaption {
+    text-align: center;
+    font-weight: bold;  
+    font-size: .8rem;
+}
+
+iframe {width: 100%;}
+
+/* Regras temporarias para auxílio nos ajustar de espaços e alinhamentos */
+
+/* h1 {background-color: red;}
+h1 a {background-color: rebeccapurple;}
+nav {background-color: yellowgreen;}
+nav a {background-color: lightskyblue;} */
+
+
+h1,h1 a, nav, nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 { padding: 5px 0;
+    font-size: 2.2rem;
+}
+
+h1 img { width: 50px;}
+
+nav a  {
+    height: 50px;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+nav a:hover, nav a:focus {
+    background-color: black;
+    color: white;
+}
+
+/* filtro na imagem */
+/* article img {
+    filter: grayscale(100%);
+    transition: 2s;
+}
+
+    article img:hover {filter: grayscale(0);} */
+
+input, textarea {
+    border: solid 2px;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+label {font-size: .7rem;}
+
+button {
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+button:hover, button:focus {
+    background-color: gray;
+    cursor: pointer; /* altera o cursor do mause para maozinha*/
+}
+
+#voltar-topo {
+    position: fixed;
+    /* cordenadas topo,bottom,left,z-index */
+    bottom: 5px;
+    right: 15px;
+}
+
+/* para qualquuer links em paragrafos 
+p a {}*/
+
+/* apenas o link existente no elemento identificado */
+#voltar-topo a { 
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+#voltar-topo a:hover, #voltar-topo a:focus {
+    background-color: gray;
+}
+
+#voltar-topo a::before {
+    content: "▲";
+}
+
+/* Media Queries Regras especiais que aplicarão formatações de acordo
+
+com determinadas condições (a partir de certos tamanhos de tela) */
+
+/* 1- Telas a partir de 700px de largura 
+mobile-firt min-width
+deskton-firt max-width */
+@media screen and (min-width: 700px) {
+    header #container {
+        display: flex;
+        justify-content: space-between;   
+        width: 95%; 
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 750px) {
+ 
+    .grupo {
+        display: flex;
+        flex-wrap: wrap ;
+        justify-content: space-between;
+    }
+    .itens {
+        width: 49%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        }
+    }
+   
+@media screen and (min-width: 820px) {
+    html {font-size: 20px;}
+}
+
+@media screen and (min-width: 1000px) {
+    #container, main { max-width: 1000px;}
+    header {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        top: 0;
+    }
+
+    #voltar-topo {display: none;} 
+
+    #topo, #o_que_fazemos, #nossas_equipes, #contato {
+       padding-top: 75px;
+    }
+
+}
